@@ -5,7 +5,7 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        '''
+        '''#version 1.0
         l = len(nums)
         for i in range(l - 1):
             for j in range(i + 1, l):
@@ -14,6 +14,7 @@ class Solution(object):
                     n = j
         return [m, n]
         '''
+        '''#version 2.0
         temp = nums[:]
         temp.sort()
         result = []
@@ -34,3 +35,10 @@ class Solution(object):
             else:
                 r -= 1
         return result
+        '''
+        #version 3.0
+        dict = {}
+        for i in xrange(len(nums)):
+            if target - nums[i] in dict:
+                return [dict[target-nums[i]], i]
+            dict[nums[i]] = i
