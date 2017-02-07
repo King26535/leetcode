@@ -11,7 +11,7 @@ class Solution(object):
         
         a,b,res = abs(dividend),abs(divisor),0
         
-        if b == 0 or (a >= 2**31-1 and divisor == -1):
+        if b == 0 or (a > 2**31-1 and divisor == -1):
             return 2**31-1
 
         while a >= b:
